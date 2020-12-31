@@ -47,3 +47,8 @@ github action
   - service: golang-cicd-container-service
   - cluster: golang-cicd-cluster
 
+addition:
+If go project open the port on other port number like 8081, we need to use application load balancer to do the port forwarding from 80 to 8081
+  - go to ec2->security group, edit inbound rule for the security group name with ALB, change the port to 80
+  - go to ec2->load balancing, click on listeners and edit the port to 80
+  - click on description, look for the dns name, which is the load balancing domain, and you can visit by this link
