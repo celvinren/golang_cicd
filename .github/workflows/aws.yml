@@ -52,7 +52,7 @@ jobs:
       id: build-image
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: golang_cicd
+        ECR_REPOSITORY: golang_cicd_repository
         IMAGE_TAG: ${{ github.sha }}
       run: |
         # Build a docker container and
@@ -66,7 +66,7 @@ jobs:
       id: task-def
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
-        task-definition: task-definition.json
+        task-definition: task_def.json
         container-name: golang_cicd_container
         image: ${{ steps.build-image.outputs.image }}
 

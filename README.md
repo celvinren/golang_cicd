@@ -14,16 +14,17 @@ requirement:
   - port mapings, we use 80, next
   - edit service, number of task is for scale out the container, load balancer is for the network, next
   - provide the cluster name "golang-cicd-cluster"
-  - go to task definition, click on json tab, and copy all the content, need to create a task definition. json under the golang project later on
+  - go to task definition, click on json tab, and copy all the content, need to create a task-def.json under the golang project later on
   
 Up to here, you will have the following ready:
+aws-region: ap-southeast-2
 AWS access key
 AWS secret key
 repository - golang_cicd_repository
 container - golang-cicd-container
 cluster - golang-cicd-cluster
 service - golang-cicd-container-service
-task definition.json
+task-def.json
   
 Golan Project
 1. create go project
@@ -31,6 +32,18 @@ Golan Project
   go mod init
   - run the go project locally without any issue, then we can push the project to github
   go run main.go
-2. under project root path create a Dockerfile, according the enviornment to write this file, in my case please open the Dockerfile in my repostory
+2. under project root path create a Dockerfile, according the enviornment to write this file, in my case please open the Dockerfile in my repository
 3. under project root path create a task_def.json, copy all the content of the json file in task definition to this file
 4. push the projuct to github from IDE (vs code)
+
+github action
+1. setup the AWS access key and secret key under settings->secrets->new repository secret
+2. github action and select "Deploy to Amazon ECS" and click "set up this workflow"
+3. change the following in the template:
+  - aws-region: ap-southeast-2
+  - ECR_REPOSITORY: golang_cicd_repository
+  - task-definition: task_def.json
+  - container-name: golang_cicd_container
+  - service: golang_cicd_container-service
+  - cluster: golang-cicd-cluster
+
