@@ -56,5 +56,5 @@ If go project open the port on other port number like 8081, we need to use appli
 ## To sum up, the principle is:  
 1. provisioning the ecs cluster first
 2. write dockerfile in your project and build the docker image
-3. push the docker image to aws repository
+3. push the docker image to aws repository  
 cluster will deploy according to the task definition, then done.
