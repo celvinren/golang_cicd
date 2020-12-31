@@ -1,6 +1,6 @@
 # golang_cicd
 
-requirement:
+# requirement:
 1. setup AWS IAM
   - create user group with "containerService" and "containerRegistery"
   - create user and assign to the user group
@@ -26,7 +26,7 @@ cluster - golang-cicd-cluster
 service - golang-cicd-container-service
 task-def.json
   
-Golan Project
+# Golang Project
 1. create go project
   - in order to use go module, need to run the following cmd
   go mod init
@@ -36,7 +36,7 @@ Golan Project
 3. under project root path create a task_def.json, copy all the content of the json file in task definition to this file
 4. push the projuct to github from IDE (vs code)
 
-github action
+# github action
 1. setup the AWS access key and secret key under settings->secrets->new repository secret
 2. github action and select "Deploy to Amazon ECS" and click "set up this workflow"
 3. change the following in the template:
@@ -47,7 +47,7 @@ github action
   - service: golang-cicd-container-service
   - cluster: golang-cicd-cluster
 
-addition:
+# addition:
 If go project open the port on other port number like 8081, we need to use application load balancer to do the port forwarding from 80 to 8081
   - go to ec2->security group, edit inbound rule for the security group name with ALB, change the port to 80
   - go to ec2->load balancing, click on listeners and edit the port to 80
