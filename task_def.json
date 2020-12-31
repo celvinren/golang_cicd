@@ -17,7 +17,7 @@
       "entryPoint": [],
       "portMappings": [
         {
-          "hostPort": 8081,
+          "hostPort": 80,
           "protocol": "tcp",
           "containerPort": 8081
         }
