@@ -16,15 +16,15 @@
   - provide the cluster name "golang-cicd-cluster"
   - go to task definition, click on json tab, and copy all the content, need to create a task-def.json under the golang project later on
   
-Up to here, you will have the following ready:
-aws-region: ap-southeast-2
-AWS access key
-AWS secret key
-repository - golang_cicd_repository
-container - golang-cicd-container
-cluster - golang-cicd-cluster
-service - golang-cicd-container-service
-task-def.json
+Up to here, you will have the following ready:  
+aws-region: ap-southeast-2  
+AWS access key  
+AWS secret key  
+repository - golang_cicd_repository  
+container - golang-cicd-container  
+cluster - golang-cicd-cluster  
+service - golang-cicd-container-service  
+task-def.json  
   
 # Golang Project
 1. create go project
