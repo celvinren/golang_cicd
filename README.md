@@ -43,7 +43,7 @@ github action
   - aws-region: ap-southeast-2
   - ECR_REPOSITORY: golang_cicd_repository
   - task-definition: task_def.json
-  - container-name: golang_cicd_container
-  - service: golang_cicd_container-service
+  - container-name: golang-cicd-container
+  - service: golang-cicd-container-service
   - cluster: golang-cicd-cluster
 
