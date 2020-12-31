@@ -52,3 +52,9 @@ If go project open the port on other port number like 8081, we need to use appli
 >>- go to ec2->security group, edit inbound rule for the security group name with ALB, change the port to 80
 >>- go to ec2->load balancing, click on listeners and edit the port to 80
 >>- click on description, look for the dns name, which is the load balancing domain, and you can visit by this link
+
+## To sum up, the principle is:  
+1. provisioning the ecs cluster first
+2. write dockerfile in your project and build the docker image
+3. push the docker image to aws repository
+cluster will deploy according to the task definition, then done.
